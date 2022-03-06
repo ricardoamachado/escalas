@@ -1,2 +1,2 @@
 # escalas
-Gerador de escalas musicas em python.
+Gerador de escalas musicais em python.
