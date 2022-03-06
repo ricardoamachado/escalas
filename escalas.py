@@ -29,6 +29,7 @@ def main():
     intervalos_escala_menor_natural = [0,2,1,2,2,1,2,2]
     intervalos_escala_menor_harmonica = [0,2,1,2,2,1,3,1]
     intervalos_escala_menor_melodica = [0,2,1,2,2,2,2,1]
+    intervalos_escala_dominante = [0,2,2,1,2,2,1,2]
     print("Qual a tônica da sua escala ?")
     for i in range(0,12):
         print(f"Digite {i} para {notas[i]}")
@@ -39,23 +40,25 @@ def main():
         except:
             print("Entrada Inválida, Tente Novamente.")
     print("Qual a escala desejada ?")
-    print("Digite 0 para Escala Maior \nDigite 1 para Escala Menor Natural \nDigite 2 para Escala Menor Harmônica \nDigite 3 para Escala Menor Melôdica")
+    print("Digite 0 para Escala Maior \nDigite 1 para Escala Menor Natural \nDigite 2 para Escala Menor Harmônica \nDigite 3 para Escala Menor Melôdica \nDigite 4 para Escala Dominante")
     while True:
         try:
             num_escala = int(input())
             break
         except:
             print("Entrada Inválida, Tente Novamente.")
-    if num_escala not in [0,1,2,3]:
-        print("Entrada Inválida, Mostrando Escala Menor Melôdica.")
+    if num_escala not in [0,1,2,3,4]:
+        print("Entrada Inválida, Mostrando Escala Dominante.")
     if num_escala == 0:
         print(montar_escala(tonica,notas,intervalos_escala_maior))
     elif num_escala == 1:
         print(montar_escala(tonica,notas,intervalos_escala_menor_natural))
     elif num_escala == 2:
         print(montar_escala(tonica,notas,intervalos_escala_menor_harmonica))
-    else:
+    elif num_escala == 3:
         print(montar_escala(tonica,notas,intervalos_escala_menor_melodica))
+    else:
+        print(montar_escala(tonica,notas,intervalos_escala_dominante))
 
 main()
 # for i in range(0,12):
